@@ -108,6 +108,22 @@ def oat_to_dex():
     pass
 
 
+def fix_xml(file_path):
+    """Moves the XML version header on top to accommodate android build system requirements
+    file_path: The XML file
+    """
+    with open(file_path, 'r+') as file:
+        header = ""
+        contenent = ""
+        for line in file:
+            if 'xml version' in line:
+                header = line
+            else:
+                contenent += line
+        file.seek(0)
+        file.write(header + contenent)
+
+
 def parse_blob_path(entry):
     """Return src, dst tuple from raw entry line
     entry: String representing blob listing of form:
