@@ -343,6 +343,9 @@ class CopyableBlob(Blob):
             os.remove(dst_path)
             return False
 
+        if dst_path.endswith('.xml'):
+            fix_xml(dst_path)
+
         return True
 
     def do_extract_dir(self, croot, src_path, dst_path):
@@ -359,6 +362,10 @@ class CopyableBlob(Blob):
             return False
 
         shutil.copyfile(src_path, dst_path, follow_symlinks=True)
+
+        if dst_path.endswith('.xml'):
+            fix_xml(dst_path)
+
         return True
 
 
