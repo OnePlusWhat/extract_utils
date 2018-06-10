@@ -220,7 +220,7 @@ def write_copyright(args, makefile):
     makefile.write('# you may not use this file except in compliance with the License.\n')
     makefile.write('# You may obtain a copy of the License at\n')
     makefile.write('#\n')
-    makefile.write('# http://www.apache.org/licenses/LICENSE-2.0\n')
+    makefile.write('#    http://www.apache.org/licenses/LICENSE-2.0\n')
     makefile.write('#\n')
     makefile.write('# Unless required by applicable law or agreed to in writing, software\n')
     makefile.write('# distributed under the License is distributed on an "AS IS" BASIS,\n')
